@@ -4,6 +4,12 @@
     <project decomp_dir="E:\Google Drive - IIT\Year 4\6SENG001W - 6SENG003C Reasoning about Programs\Coursework 01\Code\SpaceshipsAndAsteroids\bdp\expand_src" old_decomp_dir="E:\Google Drive - IIT\Year 4\6SENG001W - 6SENG003C Reasoning about Programs\Coursework 01\Code\SpaceshipsAndAsteroids\bdp\src">
         <!-- Definition directory list -->
         <!-- Component file list -->
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Coursework 01/Code/SpaceshipsAndAsteroids" name="Asteroids" suffix="mch" user="ayesh">
+            <component name="Asteroids" type="specification" />
+        </component_file>
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Coursework 01/Code/SpaceshipsAndAsteroids" name="Game" suffix="mch" user="ayesh">
+            <component name="Game" type="specification" />
+        </component_file>
         <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Coursework 01/Code/SpaceshipsAndAsteroids" name="Space" suffix="mch" user="ayesh">
             <component name="Space" type="specification" />
         </component_file>
