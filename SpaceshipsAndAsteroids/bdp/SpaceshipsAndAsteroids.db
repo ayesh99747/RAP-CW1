@@ -7,14 +7,14 @@
         <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Coursework 01/Code/SpaceshipsAndAsteroids" name="Asteroids" suffix="mch" user="ayesh">
             <component name="Asteroids" type="specification" />
         </component_file>
-        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Coursework 01/Code/SpaceshipsAndAsteroids" name="Game" suffix="mch" user="ayesh">
-            <component name="Game" type="specification" />
-        </component_file>
         <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Coursework 01/Code/SpaceshipsAndAsteroids" name="Space" suffix="mch" user="ayesh">
             <component name="Space" type="specification" />
         </component_file>
         <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Coursework 01/Code/SpaceshipsAndAsteroids" name="Spaceship" suffix="mch" user="ayesh">
             <component name="Spaceship" type="specification" />
+        </component_file>
+        <component_file path="E:/Google Drive - IIT/Year 4/6SENG001W - 6SENG003C Reasoning about Programs/Coursework 01/Code/SpaceshipsAndAsteroids" name="SpaceshipAndAsteroidsGame" suffix="mch" user="ayesh">
+            <component name="SpaceshipAndAsteroidsGame" type="specification" />
         </component_file>
     </project>
 </db_xml>

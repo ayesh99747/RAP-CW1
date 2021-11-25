@@ -1,11 +1,10 @@
 digraph {
 Asteroids [ label=" Asteroids " shape= box ]
-Game [ label=" Game " shape= box ]
 Space [ label=" Space " shape= box ]
 Spaceship [ label=" Spaceship " shape= box ]
+SpaceshipAndAsteroidsGame [ label=" SpaceshipAndAsteroidsGame " shape= box ]
 
 "Asteroids" -> "Space" [style= dotted ]
-"Game" -> "Spaceship" []
 "Spaceship" -> "Space" [style= dotted ]
 "Spaceship" -> "Asteroids" [style= dotted ]
 }
