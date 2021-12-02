@@ -14,7 +14,43 @@ PROMOTES
     
 DEFINITIONS
     // The following definition is used to evaluate whether the ship is in the starbase position (6,4).
-    isSpaceshipInStarbase == ((spaceshipXPosition |-> spaceshipYPosition) = starbaseLocation)
+    isSpaceshipInStarbase == ((spaceshipXPosition |-> spaceshipYPosition) = starbaseLocation);
+    
+    /* 
+    The below function is used to animate the game.
+    Note : The animation function displays from top to bottom, and left to right, 
+           hence the y axis coordinates need to be taken as 8 - coordinate. 
+    */
+    ANIMATION_FUNCTION == (
+            {
+                xx, yy, image | xx : XAxis & yy : YAxis &             
+                (IF (xx = prj1(XAxis, YAxis)(starbaseLocation) & yy = prj2(XAxis, YAxis)(starbaseLocation))
+                    THEN
+                        // If the location is the starbase we will display the starbase image.
+                        image = 3
+                    ELSE
+                        IF (xx |-> (8 - yy) : Asteroids.asteroids) 
+                        THEN
+                            // If the location is an element of the asteroids set, we will display an asteroid.
+                            image = 1
+                        ELSE
+                            IF (xx = spaceshipXPosition & yy = (8 - spaceshipYPosition))
+                            THEN
+                                // If the location is equal to the current location of the spaceship, we will display the spaceship.
+                                image = 2
+                            ELSE
+                                // If there is nothing in that space, an empty space will be displayed.
+                                image = 0
+                            END
+                        END
+                    END
+                )
+            });
+    // Below are the images used to create the images. The individual images are found in the images folder.
+    ANIMATION_IMG0 == "images/empty.gif";
+    ANIMATION_IMG1 == "images/asteroid.gif";
+    ANIMATION_IMG2 == "images/spaceship.gif";
+    ANIMATION_IMG3 == "images/starbase.gif";
     
 OPERATIONS
     
