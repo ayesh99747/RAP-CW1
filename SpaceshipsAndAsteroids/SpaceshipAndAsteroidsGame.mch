@@ -21,41 +21,58 @@ DEFINITIONS
     Note : The animation function displays from top to bottom, and left to right, 
            hence the y axis coordinates need to be taken as 8 - coordinate. 
     */
-    ANIMATION_FUNCTION == (
-            {
-                xx, yy, image | xx : XAxis & yy : YAxis &             
-                (IF (xx = prj1(XAxis, YAxis)(starbaseLocation) & yy = prj2(XAxis, YAxis)(starbaseLocation))
-                    THEN
-                        // If the location is the starbase we will display the starbase image.
-                        image = 3
-                    ELSE
-                        IF (xx |-> (8 - yy) : Asteroids.asteroids) 
+       ANIMATION_FUNCTION == (
+            {yy,xx,image | yy:YAxis & xx:XAxis &            
+                (
+                    // If the spaceship has docked at starbase(Game Won) an empty screen will be shown with the spaceship docked in the centre.
+                    IF (spaceshipXPosition = prj1(XAxis, YAxis)(starbaseLocation) & spaceshipYPosition = prj2(XAxis, YAxis)(starbaseLocation))
                         THEN
-                            // If the location is an element of the asteroids set, we will display an asteroid.
-                            image = 1
-                        ELSE
-                            IF (xx = spaceshipXPosition & yy = (8 - spaceshipYPosition))
+                            IF (xx = prj1(XAxis, YAxis)(starbaseLocation) & yy = prj2(XAxis, YAxis)(starbaseLocation))
                             THEN
-                                // If the location is equal to the current location of the spaceship, we will display the spaceship.
-                                image = 2
+                                // Showing the starbase docked image.
+                                image = 3
                             ELSE
-                                // If there is nothing in that space, an empty space will be displayed.
+                                // All other cells will be empty cells.
                                 image = 0
                             END
-                        END
+                    ELSE
+                        // If the game is still being played and the spaceship has not yet docked, the normal grid will be shown.
+                        IF (xx = prj1(XAxis, YAxis)(starbaseLocation) & yy = prj2(XAxis, YAxis)(starbaseLocation))
+                            THEN
+                                // Displaying the starbase in the starbase location cell.
+                                image = 4
+                            ELSE
+                                IF (xx |-> (8 - yy) : Asteroids.asteroids)
+                                    THEN
+                                        // Displaying asteroids in the relevant cells.
+                                        image = 1
+                                    ELSE
+                                        IF (xx = spaceshipXPosition & yy = (8 - spaceshipYPosition))
+                                        THEN
+                                            // Displaying the spaceship in the current location.
+                                            image = 2
+                                        ELSE
+                                            // Displaying an empty cell in the relevant location.
+                                            image = 0
+                                        END
+                                    END
+                            END
                     END
+
                 )
             });
     // Below are the images used to create the images. The individual images are found in the images folder.
-    ANIMATION_IMG0 == "images/empty.gif";
-    ANIMATION_IMG1 == "images/asteroid.gif";
-    ANIMATION_IMG2 == "images/spaceship.gif";
-    ANIMATION_IMG3 == "images/starbase.gif";
+    ANIMATION_IMG0 == "images/empty_cell.gif";
+    ANIMATION_IMG1 == "images/asteroid_cell.gif";
+    ANIMATION_IMG2 == "images/spaceship_cell.gif";
+    ANIMATION_IMG3 == "images/spaceship-docked_cell.gif";
+    ANIMATION_IMG4 == "images/starbase_cell.gif";
+    
     
 OPERATIONS
     
-    /* The following operation reports the current status of the spaceship.
-       (current location, remaining power and number of collisions) */
+    /* The following operation reports the cuyyent status of the spaceship.
+       (cuyyent location, remaining power and number of collisions) */
     location, power, collisions <-- MissionStatus = 
     BEGIN
         location := (spaceshipXPosition |-> spaceshipYPosition) ||
