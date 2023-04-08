@@ -1,4 +1,4 @@
-# Spaceship & Asteroids Arcade Game - Reasoning about Programming Coursework 1
+# Spaceship & Asteroids Arcade Game - Reasoning about Programs Coursework 1
 This repository contains a B specification of a very simple version of the old Spaceship & Asteroids arcade game, using the B tools Atelier B & ProB.
 
 ## Introduction
